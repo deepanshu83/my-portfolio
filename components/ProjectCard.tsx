@@ -1,59 +1,77 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function ProjectCard({ project }: any) {
+export default function ProjectCard({
+  project,
+  index,
+}: {
+  project: any;
+  index: number;
+}) {
   return (
     <motion.div
-      whileHover={{ scale: 1.05 }}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -6 }}
+      className="group bg-slate-800/40 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300"
     >
-      {/* Title */}
-      <h3 className="text-2xl font-semibold flex items-center gap-2">
-        {project.name}
+      {/* Top accent bar */}
+      <div className="h-1 bg-gradient-to-r from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-        {project.name === "HalluciScan" && (
-          <span className="bg-green-600 text-xs px-2 py-1 rounded-full">
-            Featured
-          </span>
-        )}
-      </h3>
+      <div className="p-6">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="text-xl font-semibold group-hover:text-blue-400 transition-colors">
+            {project.name}
+          </h3>
 
-      {/* Description */}
-      <p className="text-gray-400 mt-3">{project.description}</p>
+          {project.live && (
+            <span className="bg-emerald-500/10 text-emerald-400 text-xs px-2.5 py-1 rounded-full border border-emerald-500/20 flex-shrink-0">
+              Live
+            </span>
+          )}
+        </div>
 
-      {/* Tech */}
-      <div className="flex flex-wrap gap-2 mt-4">
-        {project.tech.split(",").map((t: string, i: number) => (
-          <span
-            key={i}
-            className="bg-slate-700 px-3 py-1 rounded-full text-sm"
-          >
-            {t.trim()}
-          </span>
-        ))}
-      </div>
+        {/* Description */}
+        <p className="text-gray-400 mt-3 text-sm leading-relaxed line-clamp-3">
+          {project.description}
+        </p>
 
-      {/* Buttons */}
-      <div className="flex gap-4 mt-5">
-        <a
-          href={project.link}
-          target="_blank"
-          className="text-blue-400"
-        >
-          GitHub →
-        </a>
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-1.5 mt-4">
+          {project.tech.split(",").map((t: string, i: number) => (
+            <span
+              key={i}
+              className="bg-slate-700/50 text-gray-400 px-2.5 py-1 rounded-md text-xs font-mono"
+            >
+              {t.trim()}
+            </span>
+          ))}
+        </div>
 
-        {project.live && (
+        {/* Links */}
+        <div className="flex gap-4 mt-5 pt-4 border-t border-slate-700/30">
           <a
-            href={project.live}
+            href={project.link}
             target="_blank"
-            className="text-green-400"
+            className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1"
           >
-            Live →
+            <span>Source Code</span>
+            <span className="text-xs">↗</span>
           </a>
-        )}
+
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              className="text-blue-400 hover:text-blue-300 text-sm transition-colors flex items-center gap-1"
+            >
+              <span>Live Demo</span>
+              <span className="text-xs">↗</span>
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
