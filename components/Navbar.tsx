@@ -24,16 +24,16 @@ export default function Navbar() {
     <nav
       className={`flex justify-between items-center px-6 md:px-10 py-4 sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-900/80 backdrop-blur-xl border-b border-slate-800/60 shadow-lg shadow-black/10"
+          ? "bg-[#06080f]/80 backdrop-blur-xl border-b border-white/[0.06]"
           : "bg-transparent"
       }`}
     >
-      <a href="#" className="font-bold text-lg tracking-tight">
-        {profile.name.split(" ")[0]}
-        <span className="text-blue-400">.</span>
+      <a href="#" className="font-bold text-lg tracking-tight font-mono">
+        &lt;{profile.name.split(" ")[0]}
+        <span className="text-blue-400"> /</span>&gt;
       </a>
 
-      <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
+      <div className="hidden md:flex items-center gap-8 text-sm text-gray-500">
         {navLinks.map((link) => (
           <a
             key={link.label}
@@ -41,16 +41,17 @@ export default function Navbar() {
             className="hover:text-white transition-colors relative group"
           >
             {link.label}
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all group-hover:w-full rounded-full" />
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-blue-400 transition-all group-hover:w-full" />
           </a>
         ))}
       </div>
 
       <a
         href={`mailto:${profile.email}`}
-        className="hidden md:block bg-blue-600/90 hover:bg-blue-500 px-4 py-2 rounded-lg text-sm font-medium transition-all"
+        className="hidden md:flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-mono transition-all"
       >
-        Hire Me
+        <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+        Available for Work
       </a>
     </nav>
   );
