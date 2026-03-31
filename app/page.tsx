@@ -75,16 +75,16 @@ export default function Home() {
                   { href: profile.codeforces, icon: <SiCodeforces className="text-lg" />, label: "Codeforces" },
                 ].map((s) => (
                   <motion.a key={s.label} href={s.href} target="_blank"
-                    className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm text-gray-400 hover:border-orange-500/30 hover:text-orange-400 transition-all"
+                    className="flex flex-col items-center gap-1 bg-white/[0.04] border border-white/[0.08] px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-gray-400 hover:border-orange-500/30 hover:text-orange-400 transition-all"
                     variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
                     whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.97 }}
-                  >{s.icon} <span className="hidden xs:inline">{s.label}</span></motion.a>
+                  >{s.icon}<span className="text-[10px] sm:text-xs">{s.label}</span></motion.a>
                 ))}
               </motion.div>
 
-              <motion.div className="flex flex-col xs:flex-row gap-3 mt-5 sm:mt-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3.5 }}>
-                <motion.a href={profile.resumeLink} target="_blank" className="bg-orange-500 hover:bg-orange-400 text-white px-5 sm:px-6 py-3 rounded-xl font-medium text-sm shadow-lg shadow-orange-500/25 transition-all text-center" whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(249,115,22,0.3)" }} whileTap={{ scale: 0.97 }}>Download Resume ↓</motion.a>
-                <motion.a href="#contact" className="bg-white/[0.04] border border-white/[0.08] px-5 sm:px-6 py-3 rounded-xl font-medium hover:bg-white/[0.08] hover:border-orange-500/20 text-sm transition-all text-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>Let&apos;s Talk →</motion.a>
+              <motion.div className="flex flex-row gap-2.5 mt-5 sm:mt-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 3.5 }}>
+                <motion.a href={profile.resumeLink} target="_blank" className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg font-medium text-xs shadow-lg shadow-orange-500/25 transition-all text-center" whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(249,115,22,0.3)" }} whileTap={{ scale: 0.97 }}>Download Resume ↓</motion.a>
+                <motion.a href="#contact" className="bg-white/[0.04] border border-white/[0.08] px-4 py-2 rounded-lg font-medium hover:bg-white/[0.08] hover:border-orange-500/20 text-xs transition-all text-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>Let&apos;s Talk →</motion.a>
               </motion.div>
             </motion.div>
 
