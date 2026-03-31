@@ -34,7 +34,7 @@ import {
   HiOutlineLightningBolt,
 } from "react-icons/hi";
 
-import { TbScroll } from "react-icons/tb";
+import { TbArrowsUpDown } from "react-icons/tb";
 import { MdAnimation } from "react-icons/md";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -51,7 +51,7 @@ const iconMap: Record<string, React.ReactNode> = {
   FaPython: <FaPython />,
   SiGreensock: <SiGreensock />,
   SiFramer: <SiFramer />,
-  TbScrollbar: <TbScroll />,
+  TbScrollbar: <TbArrowsUpDown />,
   MdAnimation: <MdAnimation />,
   HiOutlineLightningBolt: <HiOutlineLightningBolt />,
   SiDocker: <SiDocker />,
