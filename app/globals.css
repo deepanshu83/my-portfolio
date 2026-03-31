@@ -9,7 +9,6 @@ body {
   color: #e2e8f0;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -21,16 +20,14 @@ body {
   border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #f97316;
 }
 
-/* Selection */
 ::selection {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #f97316;
+  color: #06080f;
 }
 
-/* Line clamp utility */
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
