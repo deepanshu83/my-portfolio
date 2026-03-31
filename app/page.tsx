@@ -20,6 +20,9 @@ import {
   SiSupabase,
   SiLeetcode,
   SiCodeforces,
+  SiGreensock,
+  SiFramer,
+  SiDocker,
 } from "react-icons/si";
 
 import {
@@ -30,6 +33,9 @@ import {
   HiOutlineTerminal,
   HiOutlineLightningBolt,
 } from "react-icons/hi";
+
+import { TbScroll } from "react-icons/tb";
+import { MdAnimation } from "react-icons/md";
 
 const iconMap: Record<string, React.ReactNode> = {
   FaReact: <FaReact />,
@@ -43,6 +49,12 @@ const iconMap: Record<string, React.ReactNode> = {
   SiSupabase: <SiSupabase />,
   FaGitAlt: <FaGitAlt />,
   FaPython: <FaPython />,
+  SiGreensock: <SiGreensock />,
+  SiFramer: <SiFramer />,
+  TbScrollbar: <TbScroll />,
+  MdAnimation: <MdAnimation />,
+  HiOutlineLightningBolt: <HiOutlineLightningBolt />,
+  SiDocker: <SiDocker />,
 };
 
 export default function Home() {

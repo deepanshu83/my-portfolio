@@ -11,6 +11,12 @@ export const technicalSkills = [
   { name: "Supabase", icon: "SiSupabase" },
   { name: "Git", icon: "FaGitAlt" },
   { name: "Python", icon: "FaPython" },
+  { name: "GSAP", icon: "SiGreensock" },
+  { name: "Framer Motion", icon: "SiFramer" },
+  { name: "Lenis", icon: "TbScrollbar" },
+  { name: "Lottie", icon: "MdAnimation" },
+  { name: "ScrollTrigger", icon: "HiOutlineLightningBolt" },
+  { name: "Docker", icon: "SiDocker" },
 ];
 
 export const softSkills = [
