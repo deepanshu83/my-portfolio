@@ -1,7 +1,7 @@
 export const profile = {
   name: "Deepanshu Jangid",
-  title: "Full Stack & React Native Developer",
-  bio: "B.Tech CSE student at BK Birla Institute of Engineering & Technology, Pilani. I build modern web and mobile applications using MERN, Next.js, and React Native. Currently exploring AI integrations and improving problem-solving through DSA in C++.",
+  title: "Full Stack Developer & Software Engineer",
+  bio: "Passionate Full Stack Developer with 2+ years of hands-on experience building production-grade web and mobile applications. Specializing in React ecosystem, Next.js, and React Native. I architect scalable solutions, craft pixel-perfect UIs, and write clean, maintainable code. Currently pursuing B.Tech in Computer Science while actively freelancing and contributing to open source.",
   github: "https://github.com/deepanshu83",
   linkedin: "https://www.linkedin.com/in/deepanshujangid83",
   email: "deepanshujangid83@gmail.com",

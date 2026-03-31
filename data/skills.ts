@@ -14,14 +14,14 @@ export const technicalSkills = [
 ];
 
 export const softSkills = [
-  "Communication",
   "Problem Solving",
-  "Teamwork",
-  "English Proficiency",
-  "Creativity",
+  "System Design Thinking",
+  "Team Collaboration",
+  "Agile & Scrum",
+  "Technical Writing",
+  "Code Review & Mentoring",
+  "Client Communication",
   "Time Management",
-  "Leadership",
   "Adaptability",
-  "Critical Thinking",
   "Attention to Detail",
 ];
