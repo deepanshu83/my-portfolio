@@ -4,12 +4,14 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
-  animation?: "fadeUp" | "fadeLeft" | "fadeRight" | "scaleIn" | "stagger";
+  animation?: "fadeUp" | "fadeLeft" | "fadeRight" | "scaleIn";
   delay?: number;
   id?: string;
 }
@@ -27,50 +29,41 @@ export default function AnimatedSection({
     const el = sectionRef.current;
     if (!el) return;
 
-    const animationConfig: Record<string, gsap.TweenVars> = {
-      fadeUp: { y: 60, opacity: 0 },
-      fadeLeft: { x: -60, opacity: 0 },
-      fadeRight: { x: 60, opacity: 0 },
-      scaleIn: { scale: 0.9, opacity: 0 },
-      stagger: { y: 40, opacity: 0 },
+    // Set initial state
+    const initialState: gsap.TweenVars = { opacity: 1 }; // always visible by default
+    
+    const animConfigs: Record<string, { from: gsap.TweenVars }> = {
+      fadeUp: { from: { y: 40, opacity: 0 } },
+      fadeLeft: { from: { x: -40, opacity: 0 } },
+      fadeRight: { from: { x: 40, opacity: 0 } },
+      scaleIn: { from: { scale: 0.95, opacity: 0 } },
     };
 
-    const fromVars = animationConfig[animation] || animationConfig.fadeUp;
+    const config = animConfigs[animation] || animConfigs.fadeUp;
 
-    if (animation === "stagger") {
-      const children = el.querySelectorAll("[data-animate]");
-      if (children.length > 0) {
-        gsap.from(children, {
-          ...fromVars,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          delay,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        });
-      }
-    } else {
-      gsap.from(el, {
-        ...fromVars,
-        duration: 0.9,
-        ease: "power3.out",
+    const tween = gsap.fromTo(
+      el,
+      config.from,
+      {
+        y: 0,
+        x: 0,
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
         delay,
         scrollTrigger: {
           trigger: el,
-          start: "top 85%",
+          start: "top 90%",
+          end: "top 50%",
           toggleActions: "play none none none",
         },
-      });
-    }
+      }
+    );
 
     return () => {
-      ScrollTrigger.getAll().forEach((t) => {
-        if (t.trigger === el) t.kill();
-      });
+      tween.scrollTrigger?.kill();
+      tween.kill();
     };
   }, [animation, delay]);
 
