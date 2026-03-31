@@ -3,12 +3,36 @@ import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
 import { profile } from "../data/profile";
 import { projects } from "../data/projects";
+import { experience, education, certifications } from "../data/experience";
+import { technicalSkills, softSkills } from "../data/skills";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiNextdotjs, SiMongodb, SiCplusplus } from "react-icons/si";
+import { FaReact, FaNodeJs, FaGitAlt, FaPython } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiMongodb,
+  SiCplusplus,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiSupabase,
+} from "react-icons/si";
+
+const iconMap: Record<string, React.ReactNode> = {
+  FaReact: <FaReact />,
+  SiNextdotjs: <SiNextdotjs />,
+  FaNodeJs: <FaNodeJs />,
+  SiMongodb: <SiMongodb />,
+  SiCplusplus: <SiCplusplus />,
+  SiTypescript: <SiTypescript />,
+  SiJavascript: <SiJavascript />,
+  SiTailwindcss: <SiTailwindcss />,
+  SiSupabase: <SiSupabase />,
+  FaGitAlt: <FaGitAlt />,
+  FaPython: <FaPython />,
+};
 
 export default function Home() {
   return (
@@ -32,6 +56,10 @@ export default function Home() {
             MERN | React Native | Next.js Developer 🚀
           </p>
 
+          <p className="mt-2 text-gray-500 text-sm">
+            📍 {profile.location} &nbsp;|&nbsp; 📧 {profile.email}
+          </p>
+
           <p className="mt-6 max-w-xl mx-auto text-gray-500">
             {profile.bio}
           </p>
@@ -52,6 +80,14 @@ export default function Home() {
             >
               LinkedIn
             </a>
+
+            <a
+              href={profile.resumeLink}
+              target="_blank"
+              className="bg-emerald-600 px-5 py-2 rounded-lg hover:bg-emerald-500 transition"
+            >
+              Resume
+            </a>
           </div>
         </motion.div>
       </section>
@@ -70,6 +106,12 @@ export default function Home() {
           Currently, I am improving my problem-solving skills through Data
           Structures and Algorithms using C++. I also have a strong interest in
           music, which helps me stay creative and balanced.
+
+          <br /><br />
+
+          I have experience building full-stack e-commerce platforms, AI-powered
+          tools, team management apps, and cross-platform mobile applications.
+          I love shipping products that solve real problems and look great doing it.
         </p>
       </section>
 
@@ -78,19 +120,13 @@ export default function Home() {
         <h2 className="text-3xl mb-6 font-semibold">Technical Skills</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-          {[
-            { icon: <FaReact />, name: "React" },
-            { icon: <SiNextdotjs />, name: "Next.js" },
-            { icon: <FaNodeJs />, name: "Node.js" },
-            { icon: <SiMongodb />, name: "MongoDB" },
-            { icon: <SiCplusplus />, name: "C++" },
-          ].map((skill, i) => (
+          {technicalSkills.map((skill, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.1 }}
               className="bg-slate-800 p-4 rounded-xl flex flex-col items-center"
             >
-              <div className="text-3xl mb-2">{skill.icon}</div>
+              <div className="text-3xl mb-2">{iconMap[skill.icon]}</div>
               <p>{skill.name}</p>
             </motion.div>
           ))}
@@ -102,20 +138,47 @@ export default function Home() {
         <h2 className="text-3xl mb-6 font-semibold">Soft Skills</h2>
 
         <div className="flex flex-wrap justify-center gap-4">
-          {[
-            "Communication",
-            "Problem Solving",
-            "Teamwork",
-            "English Proficiency",
-            "Creativity",
-            "Time Management",
-          ].map((skill) => (
+          {softSkills.map((skill) => (
             <span
               key={skill}
               className="bg-slate-800 px-4 py-2 rounded-full hover:bg-slate-700 transition"
             >
               {skill}
             </span>
+          ))}
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section className="px-6 pb-20 text-center">
+        <h2 className="text-3xl mb-8 font-semibold">Experience</h2>
+
+        <div className="max-w-2xl mx-auto space-y-6">
+          {experience.map((exp, i) => (
+            <div key={i} className="bg-slate-800 p-6 rounded-2xl text-left">
+              <h3 className="text-xl font-semibold">{exp.role}</h3>
+              <p className="text-blue-400 text-sm mt-1">
+                {exp.company} &nbsp;•&nbsp; {exp.duration}
+              </p>
+              <p className="text-gray-400 mt-3">{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* EDUCATION */}
+      <section className="px-6 pb-20 text-center">
+        <h2 className="text-3xl mb-8 font-semibold">Education</h2>
+
+        <div className="max-w-2xl mx-auto space-y-6">
+          {education.map((edu, i) => (
+            <div key={i} className="bg-slate-800 p-6 rounded-2xl text-left">
+              <h3 className="text-xl font-semibold">{edu.degree}</h3>
+              <p className="text-blue-400 text-sm mt-1">
+                {edu.institution} &nbsp;•&nbsp; {edu.duration}
+              </p>
+              <p className="text-gray-400 mt-3">{edu.description}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -131,12 +194,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CERTIFICATIONS */}
+      <section className="px-6 pb-20 text-center">
+        <h2 className="text-3xl mb-8 font-semibold">Certifications</h2>
+
+        <div className="max-w-2xl mx-auto space-y-4">
+          {certifications.map((cert, i) => (
+            <div
+              key={i}
+              className="bg-slate-800 p-5 rounded-2xl flex justify-between items-center"
+            >
+              <div className="text-left">
+                <h3 className="font-semibold">{cert.name}</h3>
+                <p className="text-gray-400 text-sm mt-1">{cert.issuer}</p>
+              </div>
+              <span className="text-gray-500 text-sm">{cert.date}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="text-center pb-20">
         <h2 className="text-3xl mb-4 font-semibold">Contact</h2>
 
         <p className="text-gray-400">
-          Let’s connect and build something amazing 🚀
+          Let's connect and build something amazing 🚀
+        </p>
+
+        <p className="text-gray-500 mt-2">
+          📧 {profile.email}
         </p>
 
         <div className="flex justify-center gap-6 mt-6">
@@ -154,6 +241,13 @@ export default function Home() {
             className="hover:text-blue-400"
           >
             LinkedIn
+          </a>
+
+          <a
+            href={`mailto:${profile.email}`}
+            className="hover:text-blue-400"
+          >
+            Email
           </a>
         </div>
       </section>
