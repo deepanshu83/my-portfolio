@@ -25,7 +25,7 @@ export const projects = [
       "Collaborative team management platform for developer teams. Features interactive roadmap builder, Kanban-style project boards, real-time activity feeds, community forums, and role-based access control. Designed with a premium dark glassmorphism UI serving 50+ active teams.",
     tech: "Next.js, TypeScript, Tailwind CSS, Framer Motion, Supabase",
     link: "https://github.com/deepanshu83/SquadSync",
-    live: "https://squadsync.vercel.app",
+    live: "https://squadsync-beige.vercel.app",
     featured: true,
     category: "SaaS",
   },
