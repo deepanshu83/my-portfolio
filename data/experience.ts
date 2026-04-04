@@ -34,11 +34,11 @@ export const education = [
       "CGPA: 8.7/10 — Dean's List recipient. Coursework: Data Structures & Algorithms, Database Management Systems, Operating Systems, Computer Networks, Object-Oriented Programming. Secretary of the college Coding Club. Organized 3 hackathons with 500+ participants.",
   },
   {
-    degree: "Senior Secondary (XII) — PCM",
-    institution: "St. Xavier's Senior Secondary School, CBSE",
-    duration: "2022 – 2024",
+    degree: "Secondary & Senior Secondary (Class 1–12)",
+    institution: "RBSC Board",
+    duration: "2010 – 2024",
     description:
-      "Scored 92.4% in Board Examinations. Represented school in National Science Olympiad (Top 5%). Led the school's Computer Science Club and mentored juniors in programming fundamentals.",
+      "Completed Class 1 through 12 education under RBSC Board. Scored 92.4% in Class 12 PCM Board Examinations. Represented school in National Science Olympiad (Top 5%). Led the school's Computer Science Club and mentored juniors in programming fundamentals.",
   },
 ];
 
