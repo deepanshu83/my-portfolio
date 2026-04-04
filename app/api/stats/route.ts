@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const GITHUB_USERNAME = "deepanshu83";
-const LEETCODE_USERNAME = "deepanshujangid";
+const LEETCODE_USERNAME = "deepanshu123_123";
 const CODEFORCES_HANDLE = "deepanshu83";
 
 async function fetchGitHubStats() {

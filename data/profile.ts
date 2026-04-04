@@ -6,7 +6,7 @@ export const profile = {
   github: "https://github.com/deepanshu83",
   linkedin: "https://www.linkedin.com/in/deepanshujangid83",
   twitter: "https://twitter.com/deepanshu_dev",
-  leetcode: "https://leetcode.com/u/deepanshujangid",
+  leetcode: "https://leetcode.com/u/deepanshu123_123",
   codeforces: "https://codeforces.com/profile/deepanshu83",
   email: "deepanshujangid83@gmail.com",
   location: "Pilani, Rajasthan, India",
