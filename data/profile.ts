@@ -39,13 +39,13 @@ export const whatIDo = [
 
 export const codingStats = {
   leetcode: {
-    solved: 6,
-    easy: 3,
-    medium: 3,
+    solved: 0,
+    easy: 0,
+    medium: 0,
     hard: 0,
-    rating: "Unrated",
+    rating: "—",
     topPercentage: "—",
-    streak: "0 days",
+    streak: "—",
   },
   codeforces: {
     rating: "Unrated",
@@ -55,10 +55,10 @@ export const codingStats = {
     contests: 0,
   },
   github: {
-    contributions: "1,200+",
-    repos: 25,
-    stars: 200,
-    streak: "180 days",
+    contributions: "—",
+    repos: 0,
+    stars: 0,
+    streak: "—",
   },
 };
 

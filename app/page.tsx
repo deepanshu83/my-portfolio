@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
@@ -36,6 +37,35 @@ const scaleIn = { hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, sca
 const staggerContainer = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 
 export default function Home() {
+  const [liveCodingStats, setLiveCodingStats] = useState(codingStats);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch("/api/stats")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load live stats");
+        return res.json();
+      })
+      .then((data) => {
+        if (!isMounted) return;
+        if (data?.leetcode && data?.codeforces && data?.github) {
+          setLiveCodingStats({
+            leetcode: data.leetcode,
+            codeforces: data.codeforces,
+            github: data.github,
+          });
+        }
+      })
+      .catch((err) => {
+        console.error("Error fetching stats:", err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <main className="bg-[#06080f] text-white min-h-screen overflow-x-hidden">
       <Navbar />
@@ -159,20 +189,20 @@ export default function Home() {
                 <div className="flex items-center gap-3"><SiLeetcode className="text-xl sm:text-2xl text-orange-400" /><span className="font-semibold text-base sm:text-lg">LeetCode</span></div>
                 <a href={profile.leetcode} target="_blank" className="text-gray-500 text-xs hover:text-orange-400 transition-colors">View ↗</a>
               </div>
-              <div className="text-center mb-4 sm:mb-5"><p className="text-4xl sm:text-5xl font-bold text-orange-400">{codingStats.leetcode.solved}</p><p className="text-gray-500 text-xs sm:text-sm mt-1">Problems Solved</p></div>
+              <div className="text-center mb-4 sm:mb-5"><p className="text-4xl sm:text-5xl font-bold text-orange-400">{liveCodingStats.leetcode.solved}</p><p className="text-gray-500 text-xs sm:text-sm mt-1">Problems Solved</p></div>
               <div className="space-y-2.5 sm:space-y-3">
-                {[{ l: "Easy", c: "bg-emerald-500", n: codingStats.leetcode.easy, tc: "text-emerald-400" }, { l: "Medium", c: "bg-orange-400", n: codingStats.leetcode.medium, tc: "text-orange-400" }, { l: "Hard", c: "bg-red-500", n: codingStats.leetcode.hard, tc: "text-red-400" }].map((d) => (
+                {[{ l: "Easy", c: "bg-emerald-500", n: liveCodingStats.leetcode.easy, tc: "text-emerald-400" }, { l: "Medium", c: "bg-orange-400", n: liveCodingStats.leetcode.medium, tc: "text-orange-400" }, { l: "Hard", c: "bg-red-500", n: liveCodingStats.leetcode.hard, tc: "text-red-400" }].map((d) => (
                   <div key={d.l} className="flex justify-between items-center">
                     <span className={`text-xs sm:text-sm ${d.tc} w-14 sm:w-16`}>{d.l}</span>
-                    <div className="flex-1 mx-2 sm:mx-3 h-2 bg-white/[0.04] rounded-full overflow-hidden"><motion.div className={`h-full ${d.c} rounded-full`} initial={{ width: 0 }} whileInView={{ width: `${codingStats.leetcode.solved ? (d.n / codingStats.leetcode.solved) * 100 : 0}%` }} transition={{ duration: 1.2, delay: 0.3 }} viewport={{ once: true }} /></div>
+                    <div className="flex-1 mx-2 sm:mx-3 h-2 bg-white/[0.04] rounded-full overflow-hidden"><motion.div className={`h-full ${d.c} rounded-full`} initial={{ width: 0 }} whileInView={{ width: `${liveCodingStats.leetcode.solved ? (d.n / liveCodingStats.leetcode.solved) * 100 : 0}%` }} transition={{ duration: 1.2, delay: 0.3 }} viewport={{ once: true }} /></div>
                     <span className="text-xs sm:text-sm text-gray-500 font-mono w-8 text-right">{d.n}</span>
                   </div>
                 ))}
               </div>
               <div className="flex justify-between mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-white/[0.05]">
-                <div className="text-center"><p className="font-bold text-sm sm:text-base">{codingStats.leetcode.rating}</p><p className="text-gray-600 text-[10px] sm:text-xs">Rating</p></div>
-                <div className="text-center"><p className="font-bold text-orange-400 text-sm sm:text-base">{codingStats.leetcode.topPercentage === "—" ? "—" : `Top ${codingStats.leetcode.topPercentage}`}</p><p className="text-gray-600 text-[10px] sm:text-xs">Global</p></div>
-                <div className="text-center"><p className="font-bold text-sm sm:text-base">🔥 {codingStats.leetcode.streak}</p><p className="text-gray-600 text-[10px] sm:text-xs">Streak</p></div>
+                <div className="text-center"><p className="font-bold text-sm sm:text-base">{liveCodingStats.leetcode.rating}</p><p className="text-gray-600 text-[10px] sm:text-xs">Rating</p></div>
+                <div className="text-center"><p className="font-bold text-orange-400 text-sm sm:text-base">{liveCodingStats.leetcode.topPercentage === "—" ? "—" : `Top ${liveCodingStats.leetcode.topPercentage}`}</p><p className="text-gray-600 text-[10px] sm:text-xs">Global</p></div>
+                <div className="text-center"><p className="font-bold text-sm sm:text-base">🔥 {liveCodingStats.leetcode.streak}</p><p className="text-gray-600 text-[10px] sm:text-xs">Streak</p></div>
               </div>
             </motion.div>
           </motion.div>
@@ -186,11 +216,11 @@ export default function Home() {
                   <div className="flex items-center gap-3 mb-3 sm:mb-4"><SiCodeforces className="text-xl sm:text-2xl text-pink-400" /><span className="font-semibold text-base sm:text-lg">Codeforces</span>
                     <a href={profile.codeforces} target="_blank" className="text-gray-500 text-xs hover:text-pink-400 transition-colors ml-auto">View ↗</a>
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full"><span className="text-violet-400 font-bold text-sm sm:text-base">{codingStats.codeforces.rank}</span></div>
+                  <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full"><span className="text-violet-400 font-bold text-sm sm:text-base">{liveCodingStats.codeforces.rank}</span></div>
                   <p className="text-gray-500 text-xs sm:text-sm mt-2">Current Rank</p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {[{ v: codingStats.codeforces.rating, l: "Rating" }, { v: codingStats.codeforces.maxRating, l: "Max", c: "text-orange-400" }, { v: codingStats.codeforces.solved, l: "Solved" }, { v: codingStats.codeforces.contests, l: "Contests" }].map((d, i) => (
+                  {[{ v: liveCodingStats.codeforces.rating, l: "Rating" }, { v: liveCodingStats.codeforces.maxRating, l: "Max", c: "text-orange-400" }, { v: liveCodingStats.codeforces.solved, l: "Solved" }, { v: liveCodingStats.codeforces.contests, l: "Contests" }].map((d, i) => (
                     <div key={i} className="bg-white/[0.03] rounded-xl p-2.5 sm:p-3 text-center"><p className={`text-lg sm:text-xl font-bold ${d.c || ""}`}>{d.v}</p><p className="text-gray-500 text-[10px] mt-1">{d.l}</p></div>
                   ))}
                 </div>
@@ -204,13 +234,13 @@ export default function Home() {
                   <div className="flex items-center gap-3 mb-3 sm:mb-4"><FaGitAlt className="text-xl sm:text-2xl text-orange-400" /><span className="font-semibold text-base sm:text-lg">GitHub</span>
                     <a href={profile.github} target="_blank" className="text-gray-500 text-xs hover:text-white transition-colors ml-auto">View ↗</a>
                   </div>
-                  <p className="text-3xl sm:text-4xl font-bold text-emerald-400">{codingStats.github.contributions}</p>
+                  <p className="text-3xl sm:text-4xl font-bold text-emerald-400">{liveCodingStats.github.contributions}</p>
                   <p className="text-gray-500 text-xs sm:text-sm mt-1">Contributions This Year</p>
                 </div>
                 <div className="space-y-2 sm:space-y-3">
-                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Repos</span><span className="font-bold text-sm sm:text-base">{codingStats.github.repos}</span></div>
-                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Stars</span><span className="font-bold text-sm sm:text-base">⭐ {codingStats.github.stars}+</span></div>
-                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Streak</span><span className="font-bold text-orange-400 text-sm sm:text-base">🔥 {codingStats.github.streak}</span></div>
+                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Repos</span><span className="font-bold text-sm sm:text-base">{liveCodingStats.github.repos}</span></div>
+                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Stars</span><span className="font-bold text-sm sm:text-base">⭐ {liveCodingStats.github.stars}+</span></div>
+                  <div className="flex items-center justify-between bg-white/[0.03] rounded-xl px-3 sm:px-4 py-2 sm:py-2.5"><span className="text-gray-400 text-xs sm:text-sm">Streak</span><span className="font-bold text-orange-400 text-sm sm:text-base">🔥 {liveCodingStats.github.streak}</span></div>
                 </div>
               </div>
             </motion.div>
