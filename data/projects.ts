@@ -38,6 +38,7 @@ export const projects = [
     link: "https://github.com/deepanshu83/WakeUpIdiot",
     category: "Mobile App",
   },
+  /*
   {
     name: "DevPortfolio",
     description:
@@ -47,6 +48,7 @@ export const projects = [
     live: "https://deepanshu-portfolio.vercel.app",
     category: "Portfolio",
   },
+  */
   {
     name: "SquadSync",
     description:
@@ -54,9 +56,9 @@ export const projects = [
     tech: "Next.js, TypeScript, Tailwind CSS, Framer Motion, Supabase",
     link: "https://github.com/deepanshu83/SquadSync",
     live: "https://squadsync-beige.vercel.app",
-    featured: true,
     category: "SaaS",
   },
+  /*
   {
     name: "DevFilio",
     description:
@@ -66,4 +68,5 @@ export const projects = [
     live: "https://devfilio.vercel.app",
     category: "Portfolio",
   },
+  */
 ];

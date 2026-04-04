@@ -294,10 +294,13 @@ export default function Home() {
           <p className="text-gray-600 text-xs sm:text-sm max-w-xs">Real products, real users, real impact.</p>
         </motion.div>
 
-        {/* Featured: one big + one small side by side */}
+        {/* Featured: one big + other featured cards */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 mb-4 sm:mb-6">
-          <div className="md:col-span-3">{projects.filter((p) => p.featured)[0] && <ProjectCard project={projects.filter((p) => p.featured)[0]} index={0} featured />}</div>
-          <div className="md:col-span-2">{projects.filter((p) => p.featured)[1] && <ProjectCard project={projects.filter((p) => p.featured)[1]} index={1} featured />}</div>
+          {projects.filter((p) => p.featured).map((project, idx) => (
+            <div key={project.name} className={`md:col-span-${idx === 0 ? 3 : 2}`}>
+              <ProjectCard project={project} index={idx} featured />
+            </div>
+          ))}
         </div>
         {/* Non-featured: 3 cols */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">{projects.filter((p) => !p.featured).map((p, i) => <ProjectCard key={i} project={p} index={i + 2} />)}</div>
