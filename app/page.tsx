@@ -148,7 +148,7 @@ export default function Home() {
             <p className="text-violet-400 text-xs sm:text-sm font-mono tracking-wider uppercase mb-2">// competitive programming</p>
             <h2 className="text-2xl sm:text-4xl font-bold">Solving Problems<br /><span className="bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">One Testcase at a Time</span></h2>
           </div>
-          <p className="text-gray-600 text-xs sm:text-sm max-w-xs">800+ problems, multiple platforms, always improving.</p>
+          <p className="text-gray-600 text-xs sm:text-sm max-w-xs">LeetCode, Codeforces & GitHub — real stats, always improving.</p>
         </motion.div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6" initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
@@ -159,19 +159,19 @@ export default function Home() {
                 <div className="flex items-center gap-3"><SiLeetcode className="text-xl sm:text-2xl text-orange-400" /><span className="font-semibold text-base sm:text-lg">LeetCode</span></div>
                 <a href={profile.leetcode} target="_blank" className="text-gray-500 text-xs hover:text-orange-400 transition-colors">View ↗</a>
               </div>
-              <div className="text-center mb-4 sm:mb-5"><p className="text-4xl sm:text-5xl font-bold text-orange-400">{codingStats.leetcode.solved}+</p><p className="text-gray-500 text-xs sm:text-sm mt-1">Problems Solved</p></div>
+              <div className="text-center mb-4 sm:mb-5"><p className="text-4xl sm:text-5xl font-bold text-orange-400">{codingStats.leetcode.solved}</p><p className="text-gray-500 text-xs sm:text-sm mt-1">Problems Solved</p></div>
               <div className="space-y-2.5 sm:space-y-3">
                 {[{ l: "Easy", c: "bg-emerald-500", n: codingStats.leetcode.easy, tc: "text-emerald-400" }, { l: "Medium", c: "bg-orange-400", n: codingStats.leetcode.medium, tc: "text-orange-400" }, { l: "Hard", c: "bg-red-500", n: codingStats.leetcode.hard, tc: "text-red-400" }].map((d) => (
                   <div key={d.l} className="flex justify-between items-center">
                     <span className={`text-xs sm:text-sm ${d.tc} w-14 sm:w-16`}>{d.l}</span>
-                    <div className="flex-1 mx-2 sm:mx-3 h-2 bg-white/[0.04] rounded-full overflow-hidden"><motion.div className={`h-full ${d.c} rounded-full`} initial={{ width: 0 }} whileInView={{ width: `${(d.n / codingStats.leetcode.solved) * 100}%` }} transition={{ duration: 1.2, delay: 0.3 }} viewport={{ once: true }} /></div>
+                    <div className="flex-1 mx-2 sm:mx-3 h-2 bg-white/[0.04] rounded-full overflow-hidden"><motion.div className={`h-full ${d.c} rounded-full`} initial={{ width: 0 }} whileInView={{ width: `${codingStats.leetcode.solved ? (d.n / codingStats.leetcode.solved) * 100 : 0}%` }} transition={{ duration: 1.2, delay: 0.3 }} viewport={{ once: true }} /></div>
                     <span className="text-xs sm:text-sm text-gray-500 font-mono w-8 text-right">{d.n}</span>
                   </div>
                 ))}
               </div>
               <div className="flex justify-between mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-white/[0.05]">
                 <div className="text-center"><p className="font-bold text-sm sm:text-base">{codingStats.leetcode.rating}</p><p className="text-gray-600 text-[10px] sm:text-xs">Rating</p></div>
-                <div className="text-center"><p className="font-bold text-orange-400 text-sm sm:text-base">Top {codingStats.leetcode.topPercentage}</p><p className="text-gray-600 text-[10px] sm:text-xs">Global</p></div>
+                <div className="text-center"><p className="font-bold text-orange-400 text-sm sm:text-base">{codingStats.leetcode.topPercentage === "—" ? "—" : `Top ${codingStats.leetcode.topPercentage}`}</p><p className="text-gray-600 text-[10px] sm:text-xs">Global</p></div>
                 <div className="text-center"><p className="font-bold text-sm sm:text-base">🔥 {codingStats.leetcode.streak}</p><p className="text-gray-600 text-[10px] sm:text-xs">Streak</p></div>
               </div>
             </motion.div>
@@ -190,7 +190,7 @@ export default function Home() {
                   <p className="text-gray-500 text-xs sm:text-sm mt-2">Current Rank</p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {[{ v: codingStats.codeforces.rating, l: "Rating" }, { v: codingStats.codeforces.maxRating, l: "Max", c: "text-orange-400" }, { v: `${codingStats.codeforces.solved}+`, l: "Solved" }, { v: codingStats.codeforces.contests, l: "Contests" }].map((d, i) => (
+                  {[{ v: codingStats.codeforces.rating, l: "Rating" }, { v: codingStats.codeforces.maxRating, l: "Max", c: "text-orange-400" }, { v: codingStats.codeforces.solved, l: "Solved" }, { v: codingStats.codeforces.contests, l: "Contests" }].map((d, i) => (
                     <div key={i} className="bg-white/[0.03] rounded-xl p-2.5 sm:p-3 text-center"><p className={`text-lg sm:text-xl font-bold ${d.c || ""}`}>{d.v}</p><p className="text-gray-500 text-[10px] mt-1">{d.l}</p></div>
                   ))}
                 </div>

@@ -20,16 +20,6 @@ export const projects = [
     category: "E-Commerce",
   },
   {
-    name: "SquadSync",
-    description:
-      "Collaborative team management platform for developer teams. Features interactive roadmap builder, Kanban-style project boards, real-time activity feeds, community forums, and role-based access control. Designed with a premium dark glassmorphism UI serving 50+ active teams.",
-    tech: "Next.js, TypeScript, Tailwind CSS, Framer Motion, Supabase",
-    link: "https://github.com/deepanshu83/SquadSync",
-    live: "https://squadsync-beige.vercel.app",
-    featured: true,
-    category: "SaaS",
-  },
-  {
     name: "CodePulse IDE",
     description:
       "Browser-based code editor with multi-language support (JavaScript, Python, C++), live preview, integrated terminal, and syntax highlighting. Features collaborative editing via WebSockets, theme customization, and snippet management.",
@@ -41,7 +31,7 @@ export const projects = [
   {
     name: "WakeUpIdiot",
     description:
-      "Gamified alarm app that forces users to solve math challenges, word puzzles, and memory games to dismiss alarms. Features motivational meme generator, sleep analytics dashboard, and customizable difficulty levels. 2K+ downloads on Play Store with 4.5★ rating.",
+    "Gamified alarm app that forces users to solve math challenges, word puzzles, and memory games to dismiss alarms. Features motivational meme generator, sleep analytics dashboard, and customizable difficulty levels. 2K+ downloads on Play Store with 4.5★ rating.",
     tech: "React Native, Expo, JavaScript, AsyncStorage",
     link: "https://github.com/deepanshu83/WakeUpIdiot",
     category: "Mobile App",
@@ -49,10 +39,20 @@ export const projects = [
   {
     name: "DevPortfolio",
     description:
-      "This portfolio — a performance-optimized, SEO-friendly developer showcase built with Next.js 16 App Router. Features smooth animations, modular data-driven architecture, responsive design, and Lighthouse score of 98+.",
+    "This portfolio — a performance-optimized, SEO-friendly developer showcase built with Next.js 16 App Router. Features smooth animations, modular data-driven architecture, responsive design, and Lighthouse score of 98+.",
     tech: "Next.js, TypeScript, Tailwind CSS, Framer Motion",
     link: "https://github.com/deepanshu83/my-portfolio",
     live: "https://deepanshu-portfolio.vercel.app",
     category: "Portfolio",
+  },
+  {
+    name: "SquadSync",
+    description:
+      "Collaborative team management platform for developer teams. Features interactive roadmap builder, Kanban-style project boards, real-time activity feeds, community forums, and role-based access control. Designed with a premium dark glassmorphism UI serving 50+ active teams.",
+    tech: "Next.js, TypeScript, Tailwind CSS, Framer Motion, Supabase",
+    link: "https://github.com/deepanshu83/SquadSync",
+    live: "https://squadsync-beige.vercel.app",
+    featured: true,
+    category: "SaaS",
   },
 ];
