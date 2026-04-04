@@ -19,6 +19,7 @@ export const projects = [
     featured: true,
     category: "E-Commerce",
   },
+  /*
   {
     name: "CodePulse IDE",
     description:
@@ -28,6 +29,7 @@ export const projects = [
     live: "https://codepulse-ide.vercel.app",
     category: "Developer Tools",
   },
+  */
   {
     name: "WakeUpIdiot",
     description:
@@ -54,5 +56,14 @@ export const projects = [
     live: "https://squadsync-beige.vercel.app",
     featured: true,
     category: "SaaS",
+  },
+  {
+    name: "DevFilio",
+    description:
+      "A developer portfolio builder that helps devs create landing pages in minutes. Includes project sections, blog support, theme presets, and GitHub README-sync so new work stays up to date automatically.",
+    tech: "Next.js, TypeScript, Tailwind CSS, Markdown, Vercel",
+    link: "https://github.com/deepanshu83/DevFilio",
+    live: "https://devfilio.vercel.app",
+    category: "Portfolio",
   },
 ];
