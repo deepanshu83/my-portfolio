@@ -9,11 +9,11 @@ const config: Config = {
         panel: '#0c1a2e',
         border: '#233145',
         primary: {
-          DEFAULT: '#2563eb',
-          600: '#2563eb',
-          500: '#3b82f6',
+          DEFAULT: '#06b6d4',
+          500: '#06b6d4',
+          400: '#34d3e6',
         },
-        accent: '#7c3aed',
+        accent: '#60a5fa',
         muted: '#94a3b8',
       },
       boxShadow: {

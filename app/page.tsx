@@ -11,53 +11,46 @@ export default function Home() {
     <main className="min-h-screen text-slate-100">
       <Navbar />
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
-        <section id="hero" className="overflow-hidden rounded-[2rem] border border-slate-800/90 bg-slate-950/80 p-8 shadow-soft md:p-12">
+        <section id="hero" className="overflow-hidden rounded-[2rem] border border-transparent bg-[rgba(6,182,212,0.03)] p-8 md:p-12">
           <div>
-            <p className="text-sm uppercase tracking-[0.35em] text-slate-500">Hi, I’m Deepanshu.</p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl">
-              I build modern full stack projects and continuously improve through real-world development.
+            <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Hi, I’m Deepanshu.</p>
+            <h1 className="mt-5 text-5xl font-extrabold tracking-tight text-slate-100 sm:text-6xl">
+              Building modern products —
+              <span className="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">growing every step</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Student developer focused on clean UI, practical web applications, and steady growth in full stack development. I enjoy turning ideas into responsive experiences with thoughtful frontend and backend work.
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Student developer focused on clean, professional interfaces and reliable full stack solutions. I craft responsive experiences that scale with thoughtful architecture and continual learning.
             </p>
+
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-white shadow-card hover:opacity-95"
               >
-                Contact me
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Let’s collaborate
+                <ArrowRight className="ml-3 h-5 w-5" />
               </a>
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-sm text-slate-100 transition hover:border-slate-500 hover:text-white"
               >
-                View projects
+                See work
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-300">
-              <a
-                href="https://github.com/deepanshu83?utm_source=chatgpt.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-800/90 bg-slate-900/80 px-4 py-2 hover:border-slate-700"
-              >
-                <Github className="h-4 w-4" /> GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/deepanshujangid83/?utm_source=chatgpt.com"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-800/90 bg-slate-900/80 px-4 py-2 hover:border-slate-700"
-              >
-                <Linkedin className="h-4 w-4" /> LinkedIn
-              </a>
-              <a
-                href="mailto:hello@deepanshujangid.com"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-800/90 bg-slate-900/80 px-4 py-2 hover:border-slate-700"
-              >
-                <Mail className="h-4 w-4" /> Email
-              </a>
+
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
+              <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,255,255,0.02)] px-4 py-2 text-slate-200">
+                <strong className="text-primary/90">Growth</strong>
+                <span className="text-slate-400">— continuous learning & production-ready code</span>
+              </div>
+              <div className="ml-auto flex gap-3">
+                <a href="https://github.com/deepanshu83?utm_source=chatgpt.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,0.02)] px-4 py-2 text-sm text-slate-200">
+                  <Github className="h-4 w-4" /> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/deepanshujangid83/?utm_source=chatgpt.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,0.02)] px-4 py-2 text-sm text-slate-200">
+                  <Linkedin className="h-4 w-4" /> LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </section>
