@@ -33,78 +33,69 @@ export const socialLinks = [
 export const skills = [
   {
     category: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'Python', 'C++'],
+    items: ['JavaScript', 'TypeScript', 'Python', 'C++', 'HTML5', 'CSS3'],
   },
   {
     category: 'Frontend',
-    items: ['React', 'Next.js', 'Tailwind CSS'],
+    items: ['React.js', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Express.js'],
+    items: ['Node.js', 'Express.js', 'REST APIs'],
   },
   {
-    category: 'Database',
-    items: ['MongoDB', 'Firebase'],
+    category: 'Database & Cloud',
+    items: ['MongoDB', 'Firebase', 'Supabase'],
   },
   {
-    category: 'Tools',
-    items: ['Git', 'GitHub', 'VS Code'],
+    category: 'Mobile',
+    items: ['React Native', 'Expo', 'Expo Router', 'Zustand', 'AsyncStorage'],
   },
   {
-    category: 'Creative Stack',
-    items: ['Framer Motion', 'GSAP'],
-  },
-  {
-    category: 'AI/ML',
-    items: ['Machine Learning', 'NLP', 'TensorFlow (learning)'],
-  },
-  {
-    category: 'Algorithms',
-    items: ['Data Structures', 'DSA', 'Problem Solving'],
+    category: 'Tools & Platforms',
+    items: ['Git', 'GitHub', 'VS Code', 'Postman'],
   },
 ];
 
 export const projects = [
   {
-    title: 'RepoVision',
-    description:
-      'AI-powered repository analysis tool that visualizes code architecture, detects the tech stack, and generates intelligent summaries with zero setup. Paste a GitHub URL and get instant insights.',
-    tech: ['React', 'TypeScript', 'Vite', 'CSS', 'AI'],
-    github: 'https://github.com/your-username/repovision',
-    live: 'https://repovision.vercel.app/',
-  },
-  {
     title: 'HalluciScan',
     description:
-      'A Next.js full stack application and browser extension that detects hallucinations in AI outputs and verifies information against live sources.',
-    tech: ['Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
-    github: 'https://github.com/deepanshu83?utm_source=chatgpt.com',
+      'AI hallucination detection web application and browser extension. Detects hallucinations in AI-generated responses and verifies information against live online sources with a modern responsive UI.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'APIs'],
+    github: 'https://github.com/deepanshu83',
   },
   {
     title: 'WakeUpIdiot',
     description:
-      'A React Native alarm app with meme-driven interactions that makes users engage before dismissing alarms.',
-    tech: ['React Native', 'JavaScript', 'Firebase'],
-    github: 'https://github.com/deepanshu83?utm_source=chatgpt.com',
+      'Advanced React Native alarm app designed to force users awake through interactive math challenges and inactivity detection. Features 13 offline ringtones, meme-based roast messages, difficulty escalation, and full alarm scheduling with persistent storage.',
+    tech: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'AsyncStorage', 'Expo AV'],
+    github: 'https://github.com/deepanshu83',
+  },
+  {
+    title: 'RepoVision',
+    description:
+      'AI-powered repository analysis platform that detects frameworks, languages, dependencies, and databases automatically. Analyzes code architecture and generates AI-powered summaries for GitHub codebases instantly.',
+    tech: ['React 18', 'TypeScript', 'Vite', 'Custom CSS'],
+    github: 'https://github.com/deepanshu83',
   },
   {
     title: 'UrbanX',
     description:
-      'A full stack clothing web application with authentication, admin product management, and a modern shopping experience.',
+      'Full stack clothing e-commerce web application with authentication, product management dashboard, admin functionality, and a fully responsive modern shopping experience.',
     tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
-    github: 'https://github.com/deepanshu83?utm_source=chatgpt.com',
+    github: 'https://github.com/deepanshu83',
   },
   {
     title: 'AQI Tracker',
     description:
-      'An IoT-based air quality monitoring system that displays real-time AQI sensor data on a clean dashboard.',
-    tech: ['JavaScript', 'Node.js', 'React', 'Firebase'],
-    github: 'https://github.com/deepanshu83?utm_source=chatgpt.com',
+      'IoT-based air quality monitoring dashboard that displays real-time AQI sensor data with clean dashboard visualizations for environmental monitoring.',
+    tech: ['JavaScript', 'IoT Sensors', 'Web Dashboard'],
+    github: 'https://github.com/deepanshu83',
   },
 ];
 
-export const professionalSummary = `Motivated Computer Science student focused on full stack development, modern frontend engineering, and real-world product building. Experienced in developing responsive web applications using React, Next.js, TypeScript, and Tailwind CSS. Currently learning AI/ML and strengthening Data Structures & Algorithms skills alongside practical software development. Passionate about building clean user experiences, creative interfaces, and solving real-world problems through technology.`;
+export const professionalSummary = `Computer Science student and full stack developer with hands-on experience building modern web applications, responsive user interfaces, and real-world development projects. Skilled in React, Next.js, TypeScript, Node.js, and modern frontend workflows. Currently strengthening expertise in Data Structures & Algorithms and exploring AI/ML concepts alongside practical software engineering. Passionate about clean UI/UX, creative development, and building impactful digital experiences.`;
 
 export const education = [
   {
@@ -121,10 +112,11 @@ export const experience = [
     company: 'Freelance & Client Projects',
     duration: 'Ongoing',
     highlights: [
-      'Worked with small clients on web development and frontend-related tasks',
-      'Built responsive and modern UI-based solutions',
-      'Improved communication, project handling, and practical development workflow skills',
-      'Gained hands-on experience working on real requirements and deadlines',
+      'Worked directly with local businesses to improve their online presence and digital branding',
+      'Designed and developed modern, responsive business websites focused on user experience and performance',
+      'Helped businesses improve visibility through SEO optimization, Google indexing, and Google Business profile setup',
+      'Assisted in increasing customer engagement by improving online discoverability, reviews, and branding visuals',
+      'Managed real client requirements, communication, revisions, and delivery workflows professionally',
     ],
   },
   {
@@ -132,21 +124,22 @@ export const experience = [
     company: 'Self-Learning & Independent Development',
     duration: 'Ongoing',
     highlights: [
-      'Built multiple full stack and frontend projects to improve practical development skills',
-      'Practiced responsive UI design and modern frontend workflows',
-      'Improved understanding of APIs, authentication systems, and application structure',
-      'Consistently learning modern web technologies through hands-on development',
+      'Built multiple full stack and frontend projects including mobile apps, AI tools, and e-commerce platforms',
+      'Practiced responsive UI design, modern frontend workflows, and creative animations',
+      'Improved understanding of APIs, authentication systems, and application architecture',
+      'Consistently learning modern web and mobile technologies through hands-on development',
     ],
   },
 ];
 
 export const softSkills = [
   'Problem Solving',
-  'Consistency & Self-Learning',
+  'Self-Learning & Consistency',
   'Communication',
-  'Team Collaboration',
-  'Adaptability',
   'Creative Thinking',
+  'UI/UX Thinking',
+  'Adaptability',
+  'Team Collaboration',
 ];
 
 export const contactInfo = {
