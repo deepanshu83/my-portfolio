@@ -5,12 +5,12 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { SkillCard } from '@/components/SkillCard';
 import { navLinks, projects, skills, socialLinks, education, experience, softSkills, contactInfo } from '@/lib/content';
-              <a
-                href="mailto:deepanshu.jangid.83@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-800/90 bg-slate-900/80 px-4 py-2 hover:border-slate-700"
-              >
-                <Mail className="h-4 w-4" /> Email
-              </a>
+
+export default function Home() {
+  return (
+    <main className="min-h-screen text-slate-100">
+      <Navbar />
+      <div className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
         <section id="hero" className="overflow-hidden rounded-[2rem] border border-transparent bg-[rgba(6,182,212,0.03)] p-8 md:p-12">
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Hi, I’m Deepanshu.</p>
@@ -175,7 +175,7 @@ import { navLinks, projects, skills, socialLinks, education, experience, softSki
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Want to connect?</p>
                 <p className="text-lg font-medium text-slate-100">Send a message, request a resume, or say hello.</p>
                 <a
-                  href="mailto:hello@deepanshujangid.com"
+                  href="mailto:deepanshu.jangid.83@gmail.com"
                   className="inline-flex items-center justify-center rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
                 >
                   Email me
