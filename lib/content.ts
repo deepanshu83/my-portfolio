@@ -56,8 +56,12 @@ export const skills = [
     items: ['Framer Motion', 'GSAP'],
   },
   {
-    category: 'Mobile',
-    items: ['React Native (learning)'],
+    category: 'AI/ML',
+    items: ['Machine Learning', 'NLP', 'TensorFlow (learning)'],
+  },
+  {
+    category: 'Algorithms',
+    items: ['Data Structures', 'DSA', 'Problem Solving'],
   },
 ];
 

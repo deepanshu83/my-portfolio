@@ -71,8 +71,8 @@ import { navLinks, projects, skills, socialLinks, education, experience, softSki
               <ul className="mt-6 space-y-4 text-sm leading-7">
                 <li>Full stack application development with Next.js and Node.js.</li>
                 <li>Modern UI interactions, clean layouts, and subtle motion.</li>
-                <li>Learning React Native, creative coding, and DSA.</li>
-                <li>Building projects that reflect practical problem solving.</li>
+                <li>Strengthening Data Structures & Algorithms fundamentals.</li>
+                <li>Exploring AI/ML concepts and practical applications.</li>
               </ul>
             </div>
           </div>
