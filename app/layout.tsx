@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_10%_10%,rgba(124,58,237,0.06),transparent)]">
+          <div className="container">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }

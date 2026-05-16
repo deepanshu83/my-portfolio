@@ -9,21 +9,22 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/95 backdrop-blur-xl">
+    <header className="sticky top-4 z-50">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="#hero" className="text-lg font-semibold tracking-tight text-slate-100">
-          DJ.
+        <Link href="#hero" className="flex items-center gap-3 text-lg font-semibold tracking-tight text-slate-100">
+          <span className="inline-block rounded-md bg-gradient-to-r from-primary to-accent px-2 py-1 text-sm font-bold text-white">DJ</span>
+          <span className="sr-only">Home</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="text-sm text-slate-300 transition hover:text-white">
+            <a key={link.href} href={link.href} className="text-sm text-slate-300 transition hover:text-white hover:underline-offset-4 hover:underline">
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-100 transition hover:border-slate-600 hover:bg-slate-800"
+            className="rounded-full bg-primary/95 px-4 py-2 text-sm font-semibold text-white shadow-card hover:opacity-95"
           >
             Contact
           </a>
@@ -31,7 +32,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900 p-3 text-slate-200 transition hover:border-slate-600 hover:text-white md:hidden"
+          className="inline-flex items-center rounded-full border border-transparent bg-slate-800/60 p-3 text-slate-200 transition hover:border-slate-600 hover:text-white md:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
@@ -39,20 +40,22 @@ export function Navbar() {
         </button>
       </div>
       {open ? (
-        <div className="border-t border-slate-800/80 bg-slate-950/95 px-5 py-4 md:hidden">
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-sm text-slate-200 hover:text-white" onClick={() => setOpen(false)}>
-                {link.label}
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <div className="rounded-lg border border-slate-800/60 bg-[rgba(8,10,20,0.6)] px-5 py-4 md:hidden">
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <a key={link.href} href={link.href} className="text-sm text-slate-200 hover:text-white" onClick={() => setOpen(false)}>
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                className="inline-flex rounded-full bg-primary/95 px-4 py-2 text-sm font-semibold text-white"
+                onClick={() => setOpen(false)}
+              >
+                Contact
               </a>
-            ))}
-            <a
-              href="#contact"
-              className="inline-flex rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-100 hover:border-slate-600 hover:bg-slate-800"
-              onClick={() => setOpen(false)}
-            >
-              Contact
-            </a>
+            </div>
           </div>
         </div>
       ) : null}

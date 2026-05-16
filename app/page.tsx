@@ -8,7 +8,7 @@ import { navLinks, projects, skills, socialLinks } from '@/lib/content';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen text-slate-100">
       <Navbar />
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
         <section id="hero" className="overflow-hidden rounded-[2rem] border border-slate-800/90 bg-slate-950/80 p-8 shadow-soft md:p-12">

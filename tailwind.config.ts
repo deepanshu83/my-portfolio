@@ -5,12 +5,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        surface: '#0b1220',
-        panel: '#111827',
-        border: '#2e3a50',
+        surface: '#07122a',
+        panel: '#0c1a2e',
+        border: '#233145',
+        primary: {
+          DEFAULT: '#2563eb',
+          600: '#2563eb',
+          500: '#3b82f6',
+        },
+        accent: '#7c3aed',
+        muted: '#94a3b8',
       },
       boxShadow: {
-        soft: '0 18px 40px rgba(8, 11, 20, 0.2)',
+        soft: '0 18px 40px rgba(3, 6, 17, 0.45)',
+        card: '0 6px 18px rgba(2,6,23,0.6)',
       },
     },
   },
