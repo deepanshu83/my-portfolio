@@ -1,16 +1,16 @@
-import { ArrowRight, Mail, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Briefcase, BookOpen, Check } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { SkillCard } from '@/components/SkillCard';
-import { navLinks, projects, skills, socialLinks } from '@/lib/content';
-
-export default function Home() {
-  return (
-    <main className="min-h-screen text-slate-100">
-      <Navbar />
-      <div className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
+import { navLinks, projects, skills, socialLinks, education, experience, softSkills, contactInfo } from '@/lib/content';
+              <a
+                href="mailto:deepanshu.jangid.83@gmail.com"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-800/90 bg-slate-900/80 px-4 py-2 hover:border-slate-700"
+              >
+                <Mail className="h-4 w-4" /> Email
+              </a>
         <section id="hero" className="overflow-hidden rounded-[2rem] border border-transparent bg-[rgba(6,182,212,0.03)] p-8 md:p-12">
           <div>
             <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Hi, I’m Deepanshu.</p>
@@ -78,11 +78,59 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="education" className="mt-20">
+          <SectionHeading title="Education" subtitle="Learning & Growth" />
+          <div className="space-y-5">
+            {education.map((edu) => (
+              <div key={edu.school} className="rounded-2xl border border-transparent bg-[rgba(12,26,46,0.6)] p-6 shadow-card">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-slate-100">{edu.degree}</h3>
+                    <p className="mt-1 text-sm text-slate-400">{edu.school}</p>
+                    <p className="mt-2 text-sm text-slate-400">{edu.duration}</p>
+                  </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                    <BookOpen className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <p className="mt-4 text-sm leading-6 text-slate-300">{edu.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="skills" className="mt-20">
           <SectionHeading title="Skills" subtitle="What I work with" />
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {skills.map((skill) => (
               <SkillCard key={skill.category} category={skill.category} items={skill.items} />
+            ))}
+          </div>
+        </section>
+
+        <section id="experience" className="mt-20">
+          <SectionHeading title="Experience" subtitle="What I've done" />
+          <div className="space-y-5">
+            {experience.map((exp, idx) => (
+              <div key={idx} className="rounded-2xl border border-transparent bg-[rgba(12,26,46,0.6)] p-6 shadow-card">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-slate-100">{exp.title}</h3>
+                    <p className="mt-1 text-sm text-slate-400">{exp.company} • {exp.duration}</p>
+                  </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                    <Briefcase className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {exp.highlights.map((highlight, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-slate-300">
+                      <Check className="h-4 w-4 flex-shrink-0 text-primary/80 mt-0.5" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </section>
@@ -107,18 +155,18 @@ export default function Home() {
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Get in touch</p>
                 <div className="space-y-3 text-sm text-slate-300">
                   <p>
-                    GitHub:{' '}
-                    <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
-                      deepanshu83
-                    </a>
-                  </p>
-                  <p>
-                    LinkedIn:{' '}
-                    <a href={socialLinks[1].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
-                      Deepanshu Jangid
-                    </a>
-                  </p>
-                  <p>Email: hello@deepanshujangid.com</p>
+                      GitHub:{' '}
+                      <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
+                        deepanshu83
+                      </a>
+                    </p>
+                    <p>
+                      LinkedIn:{' '}
+                      <a href={socialLinks[1].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
+                        Deepanshu Jangid
+                      </a>
+                    </p>
+                    <p>Email: deepanshu.jangid.83@gmail.com</p>
                 </div>
               </div>
             </div>
