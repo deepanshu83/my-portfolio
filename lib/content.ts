@@ -102,7 +102,7 @@ export const education = [
     school: 'B K Birla Institute of Engineering and Technology, Pilani',
     degree: 'B.Tech in Computer Science Engineering',
     duration: 'Expected Graduation: 2028',
-    description: 'Relevant coursework: Data Structures & Algorithms, Web Development, Object-Oriented Programming, Database Management',
+    description: 'B.Tech Computer Science — DSA, Web Dev, OOP & Database Management.',
   },
 ];
 

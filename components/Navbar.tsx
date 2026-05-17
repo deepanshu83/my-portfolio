@@ -24,7 +24,7 @@ export function Navbar() {
           ))}
           <a
             href="#contact"
-            className="rounded-full bg-primary/95 px-4 py-2 text-sm font-semibold text-white shadow-card hover:opacity-95"
+            className="rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-white shadow-card hover:opacity-95"
           >
             Contact
           </a>
@@ -32,16 +32,17 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center rounded-full border border-transparent bg-slate-800/60 p-3 text-slate-200 transition hover:border-slate-600 hover:text-white md:hidden"
+          className="inline-flex items-center rounded-full border border-transparent bg-slate-800/50 p-3 text-slate-200 transition hover:border-slate-600 hover:text-white md:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
+          aria-expanded={open}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
       {open ? (
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="rounded-lg border border-slate-800/60 bg-[rgba(8,10,20,0.6)] px-5 py-4 md:hidden">
+          <div className="mt-3 rounded-lg border border-slate-800/60 bg-[rgba(8,10,20,0.6)] px-5 py-4 md:hidden backdrop-blur-sm">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href} className="text-sm text-slate-200 hover:text-white" onClick={() => setOpen(false)}>
@@ -50,7 +51,7 @@ export function Navbar() {
               ))}
               <a
                 href="#contact"
-                className="inline-flex rounded-full bg-primary/95 px-4 py-2 text-sm font-semibold text-white"
+                className="inline-flex rounded-full bg-gradient-to-r from-primary to-accent px-4 py-2 text-sm font-semibold text-white"
                 onClick={() => setOpen(false)}
               >
                 Contact

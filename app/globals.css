@@ -61,9 +61,35 @@ section {
   padding-right: 1.25rem;
 }
 
+.container {
+  /* keep a small max width fallback for non-tailwind container usage */
+  max-width: 78rem;
+}
+
 .accent-underline {
   display: inline-block;
-  height: 4px;
+  height: 6px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  border-radius: 4px;
+  border-radius: 999px;
+}
+
+/* Reusable card utility to keep components consistent */
+.card {
+  @apply rounded-2xl border border-transparent bg-[rgba(12,26,46,0.6)] p-6 shadow-card transition-transform duration-200;
+}
+
+/* Button baseline */
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold;
+}
+
+/* Focus styles for better accessibility */
+*:focus-visible {
+  outline: 2px solid rgba(99,102,241,0.12);
+  outline-offset: 3px;
+}
+
+/* Small muted helper */
+.muted {
+  color: var(--color-muted);
 }

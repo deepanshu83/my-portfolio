@@ -9,7 +9,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ title, description, tech, github }: ProjectCardProps) {
   return (
-    <div className="group rounded-2xl border border-transparent bg-[rgba(12,26,46,0.6)] p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+    <div className="card group hover:-translate-y-1 hover:shadow-soft">
       <div className="flex items-center justify-between gap-4">
         <h3 className="text-xl font-semibold text-slate-100">{title}</h3>
         <a
