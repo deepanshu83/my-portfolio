@@ -14,15 +14,7 @@ export const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/deepanshujangid83',
-  },
-  {
-    label: 'X',
-    href: 'https://x.com/Deepanshu_212',
-  },
-  {
-    label: 'LeetCode',
-    href: 'https://leetcode.com/u/deepanshu123_123/',
+    href: 'https://linkedin.com/in/deepanshujangid83',
   },
   {
     label: 'Email',
@@ -30,72 +22,127 @@ export const socialLinks = [
   },
 ];
 
+
 export const skills = [
   {
     category: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'Python', 'C++', 'HTML5', 'CSS3'],
+    items: ['Python', 'C++', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
   },
   {
     category: 'Frontend',
-    items: ['React.js', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
+    items: ['React.js', 'Next.js', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'React Native', 'Expo'],
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Express.js', 'REST APIs'],
+    items: ['Node.js', 'Express.js', 'FastAPI', 'REST APIs', 'MongoDB', 'Firebase', 'Supabase'],
   },
   {
-    category: 'Database & Cloud',
-    items: ['MongoDB', 'Firebase', 'Supabase'],
+    category: 'AI / Machine Learning',
+    items: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Machine Learning', 'Linear Regression', 'Data Preprocessing', 'Feature Engineering', 'Model Evaluation', 'FastAPI'],
   },
   {
-    category: 'Mobile',
-    items: ['React Native', 'Expo', 'Expo Router', 'Zustand', 'AsyncStorage'],
+    category: 'Data Analytics',
+    items: ['SQL', 'PostgreSQL', 'Power BI', 'Excel', 'Pandas', 'EDA', 'Data Visualization'],
   },
   {
-    category: 'Tools & Platforms',
-    items: ['Git', 'GitHub', 'VS Code', 'Postman'],
+    category: 'Tools',
+    items: ['Git', 'GitHub', 'Linux', 'Docker', 'Render', 'Vercel', 'Postman', 'VS Code'],
+  },
+  {
+    category: 'Currently Learning',
+    items: ['Data Structures & Algorithms', 'System Design', 'Bootloader Development', 'PyTorch', 'Deep Learning'],
   },
 ];
 
+
 export const projects = [
   {
-    title: 'HalluciScan',
+    title: 'AI House Price Prediction',
     description:
-      'AI hallucination detection web application and browser extension. Detects hallucinations in AI-generated responses and verifies information against live online sources with a modern responsive UI.',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'APIs'],
+      'Built and deployed an end-to-end Machine Learning application for predicting house prices using Linear Regression.',
+    tech: [
+      'Data preprocessing',
+      'Feature engineering',
+      'Model evaluation',
+      'FastAPI REST APIs',
+      'Responsive frontend',
+      'Render deployment',
+      'Python',
+      'Scikit-learn',
+      'FastAPI',
+      'HTML',
+      'CSS',
+      'JavaScript',
+    ],
     github: 'https://github.com/deepanshu83',
   },
   {
-    title: 'WakeUpIdiot',
+    title: 'RAG Chatbot',
     description:
-      'Advanced React Native alarm app designed to force users awake through interactive math challenges and inactivity detection. Features 13 offline ringtones, meme-based roast messages, difficulty escalation, and full alarm scheduling with persistent storage.',
-    tech: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'AsyncStorage', 'Expo AV'],
+      'Built a Retrieval-Augmented Generation chatbot using LangChain, ChromaDB and Ollama.',
+    tech: [
+      'Vector Search',
+      'Semantic Search',
+      'Document Retrieval',
+      'Context-aware responses',
+      'Local LLM',
+      'Python',
+      'LangChain',
+      'ChromaDB',
+      'Ollama',
+      'FastAPI',
+    ],
+    github: 'https://github.com/deepanshu83',
+  },
+  {
+    title: 'Stock Price Prediction',
+    description:
+      'Developed a Machine Learning web application for stock price prediction.',
+    tech: ['Python', 'FastAPI', 'Machine Learning', 'JavaScript'],
+    github: 'https://github.com/deepanshu83',
+  },
+  {
+    title: 'Retail Sales Analytics Dashboard',
+    description:
+      'Built an interactive analytics dashboard using SQL, PostgreSQL and Power BI.',
+    tech: ['KPI Dashboard', 'Sales Analysis', 'Category Analysis', 'Business Insights', 'Power BI', 'SQL', 'PostgreSQL', 'Python', 'Pandas'],
+    github: 'https://github.com/deepanshu83',
+  },
+  {
+    title: 'HalluciScan',
+    description: 'AI-powered hallucination detection platform.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     github: 'https://github.com/deepanshu83',
   },
   {
     title: 'RepoVision',
-    description:
-      'AI-powered repository analysis platform that detects frameworks, languages, dependencies, and databases automatically. Analyzes code architecture and generates AI-powered summaries for GitHub codebases instantly.',
-    tech: ['React 18', 'TypeScript', 'Vite', 'Custom CSS'],
+    description: 'AI-powered GitHub Repository Analysis Platform.',
+    tech: ['React', 'TypeScript', 'GitHub API'],
     github: 'https://github.com/deepanshu83',
   },
   {
-    title: 'UrbanX',
-    description:
-      'Full stack clothing e-commerce web application with authentication, product management dashboard, admin functionality, and a fully responsive modern shopping experience.',
-    tech: ['React', 'Node.js', 'Express.js', 'MongoDB'],
+    title: 'WakeUpIdiot',
+    description: 'React Native alarm application with math-based wake-up challenges.',
+    tech: ['React Native', 'Expo', 'TypeScript'],
     github: 'https://github.com/deepanshu83',
   },
   {
-    title: 'AQI Tracker',
-    description:
-      'IoT-based air quality monitoring dashboard that displays real-time AQI sensor data with clean dashboard visualizations for environmental monitoring.',
-    tech: ['JavaScript', 'IoT Sensors', 'Web Dashboard'],
+    title: 'Custom x86 Bootloader',
+    description: 'Developed a custom x86 bootloader using NASM Assembly.',
+    tech: ['BIOS Interrupts', 'Boot Sequence', 'Memory Layout', 'Kernel Loading Fundamentals', 'NASM', 'x86 Assembly', 'QEMU'],
     github: 'https://github.com/deepanshu83',
   },
 ];
 
-export const professionalSummary = `Computer Science student and full stack developer with hands-on experience building modern web applications, responsive user interfaces, and real-world development projects. Skilled in React, Next.js, TypeScript, Node.js, and modern frontend workflows. Currently strengthening expertise in Data Structures & Algorithms and exploring AI/ML concepts alongside practical software engineering. Passionate about clean UI/UX, creative development, and building impactful digital experiences.`;
+
+export const professionalSummary = `Computer Science undergraduate with hands-on experience building end-to-end software products across Full Stack Development, Machine Learning, and Data Analytics.
+
+Built and deployed production-ready applications using React.js, Next.js, Node.js, FastAPI, Python, Scikit-learn, SQL, PostgreSQL and Power BI.
+
+Experienced in building REST APIs, AI-powered web applications, responsive user interfaces, and cloud deployments.
+
+Currently learning Data Structures & Algorithms, System Design, Linux Internals and Bootloader Development while continuously building production-ready software.`;
+
 
 export const education = [
   {
@@ -108,29 +155,18 @@ export const education = [
 
 export const experience = [
   {
-    title: 'Freelance Web Developer',
-    company: 'Freelance & Client Projects',
-    duration: 'Ongoing',
+    title: 'Freelance Software Developer',
+    company: 'Remote',
+    duration: 'Jan 2026 – Present',
     highlights: [
-      'Worked directly with local businesses to improve their online presence and digital branding',
-      'Designed and developed modern, responsive business websites focused on user experience and performance',
-      'Helped businesses improve visibility through SEO optimization, Google indexing, and Google Business profile setup',
-      'Assisted in increasing customer engagement by improving online discoverability, reviews, and branding visuals',
-      'Managed real client requirements, communication, revisions, and delivery workflows professionally',
-    ],
-  },
-  {
-    title: 'Personal Project Development',
-    company: 'Self-Learning & Independent Development',
-    duration: 'Ongoing',
-    highlights: [
-      'Built multiple full stack and frontend projects including mobile apps, AI tools, and e-commerce platforms',
-      'Practiced responsive UI design, modern frontend workflows, and creative animations',
-      'Improved understanding of APIs, authentication systems, and application architecture',
-      'Consistently learning modern web and mobile technologies through hands-on development',
+      'Developed responsive business websites using React.js, Next.js and Tailwind CSS.',
+      'Integrated REST APIs.',
+      'Improved SEO and performance.',
+      'Managed deployments using GitHub, Render and Vercel.',
     ],
   },
 ];
+
 
 export const softSkills = [
   'Problem Solving',

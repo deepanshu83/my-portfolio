@@ -27,15 +27,16 @@ export default function Home() {
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-white shadow-card hover:opacity-95"
               >
-                Let’s collaborate
+                Download Resume
                 <ArrowRight className="ml-3 h-5 w-5" />
               </a>
               <a
-                href="#projects"
+                href="#contact"
                 className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-3 text-sm text-slate-100 transition hover:border-slate-500 hover:text-white"
               >
-                See work
+                Contact Me
               </a>
+
             </div>
 
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
@@ -60,11 +61,18 @@ export default function Home() {
           <div className="grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-6 rounded-[2rem] border border-slate-800/90 bg-slate-950/80 p-8 shadow-soft">
               <p className="text-base leading-8 text-slate-300">
-                I am a Computer Science student at B K Birla Institute of Engineering and Technology, Pilani, building real projects while learning full stack development. My focus is on clean UI, practical application logic, and steady improvement through hands-on work.
+                Computer Science undergraduate with hands-on experience building end-to-end software products across Full Stack Development, Machine Learning, and Data Analytics.
               </p>
               <p className="text-base leading-8 text-slate-300">
-                I enjoy exploring modern frontend patterns, responsive interactions, and creative development tools while keeping the experience easy to use. I like building projects that solve real problems and help me grow as a developer.
+                Built and deployed production-ready applications using React.js, Next.js, Node.js, FastAPI, Python, Scikit-learn, SQL, PostgreSQL and Power BI.
               </p>
+              <p className="text-base leading-8 text-slate-300">
+                Experienced in building REST APIs, AI-powered web applications, responsive user interfaces, and cloud deployments.
+              </p>
+              <p className="text-base leading-8 text-slate-300">
+                Currently learning Data Structures & Algorithms, System Design, Linux Internals and Bootloader Development while continuously building production-ready software.
+              </p>
+
             </div>
             <div className="rounded-[2rem] border border-slate-800/90 bg-slate-900/80 p-8 text-slate-300 shadow-soft">
               <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Current focus</p>
@@ -154,7 +162,7 @@ export default function Home() {
               <div className="space-y-3 rounded-3xl border border-slate-800/90 bg-slate-900/80 p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Get in touch</p>
                 <div className="space-y-3 text-sm text-slate-300">
-                  <p>
+                <p>
                       GitHub:{' '}
                       <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
                         deepanshu83
@@ -167,6 +175,7 @@ export default function Home() {
                       </a>
                     </p>
                     <p>Email: deepanshu.jangid.83@gmail.com</p>
+
                 </div>
               </div>
             </div>
