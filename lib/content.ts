@@ -101,6 +101,7 @@ export const projects = [
     tech: ['Python', 'FastAPI', 'Machine Learning', 'JavaScript'],
     github: 'https://github.com/deepanshu83',
   },
+
   {
     title: 'Retail Sales Analytics Dashboard',
     description:
@@ -114,6 +115,7 @@ export const projects = [
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     github: 'https://github.com/deepanshu83',
   },
+
   {
     title: 'RepoVision',
     description: 'AI-powered GitHub Repository Analysis Platform.',
@@ -152,6 +154,7 @@ export const education = [
     description: 'B.Tech Computer Science — DSA, Web Dev, OOP & Database Management.',
   },
 ];
+
 
 export const experience = [
   {

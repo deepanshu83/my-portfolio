@@ -1,4 +1,5 @@
-import { ArrowRight, Mail, Github, Linkedin, Briefcase, BookOpen, Check } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Briefcase, BookOpen, Check } from 'lucide-react';
+
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -161,22 +162,22 @@ export default function Home() {
               </p>
               <div className="space-y-3 rounded-3xl border border-slate-800/90 bg-slate-900/80 p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Get in touch</p>
-                <div className="space-y-3 text-sm text-slate-300">
+              <div className="space-y-3 text-sm text-slate-300">
                 <p>
-                      GitHub:{' '}
-                      <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
-                        deepanshu83
-                      </a>
-                    </p>
-                    <p>
-                      LinkedIn:{' '}
-                      <a href={socialLinks[1].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
-                        Deepanshu Jangid
-                      </a>
-                    </p>
-                    <p>Email: deepanshu.jangid.83@gmail.com</p>
+                  GitHub:{' '}
+                  <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
+                    deepanshu83
+                  </a>
+                </p>
+                <p>
+                  LinkedIn:{' '}
+                  <a href={socialLinks[1].href} target="_blank" rel="noreferrer" className="text-slate-100 hover:text-white">
+                    Deepanshu Jangid
+                  </a>
+                </p>
+                <p>Email: deepanshu.jangid.83@gmail.com</p>
+              </div>
 
-                </div>
               </div>
             </div>
             <div className="flex items-center justify-center rounded-[1.75rem] border border-slate-800/90 bg-slate-900/80 p-8">
@@ -187,8 +188,9 @@ export default function Home() {
                   href="mailto:deepanshu.jangid.83@gmail.com"
                   className="inline-flex items-center justify-center rounded-full bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
                 >
-                  Email me
+                  Contact Me
                 </a>
+
               </div>
             </div>
           </div>
